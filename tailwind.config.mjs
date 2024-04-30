@@ -27,6 +27,7 @@ export default {
       },
 			gridTemplateColumns: {
         'auto-fill-100': 'repeat(auto-fill, minmax(180px, 1fr))',
+				'auto-fit-sm': 'repeat(auto-fill, minmax(150px, 3fr))',
         'auto-fit-100': 'repeat(auto-fit, minmax(140px, 1fr))',
 				
       },
@@ -36,7 +37,7 @@ export default {
 				secondary: 'var(--secondary-text)'	
 			},
 			colors: {
-				bg: 'var(--bg)',
+				bgColor: 'var(--bg)',
 				primary,
 				secondary: 'var(--secondary)'
 			},

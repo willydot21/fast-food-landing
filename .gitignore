@@ -1,5 +1,6 @@
 # build output
 dist/
+./fast-food-landing.code-workspace
 
 # generated types
 .astro/

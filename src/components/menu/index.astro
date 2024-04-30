@@ -1,0 +1,19 @@
+---
+import SectionTitle from "../section-title.astro";
+import RegularMenu from "./regular-menu.astro";
+import UiLink from "../ui-link.astro";
+---
+
+<section class="w-full p-6 pt-20 flex flex-col gap-20">
+  <header class="flex flex-col w-full">
+    <SectionTitle text="Our Regular Menu" primaryWord="Regular" />
+    <div class="flex flex-row flex-wrap justify-between gap-4 pt-8">
+      <h5 class="text-sm text-secondary w-2/4">
+        Here Are Some Of Our Best Distributed Categories. If You Want You Can
+        Order From Here.
+      </h5>
+      <UiLink textColor="white" bgColor="primary" bordered>See All</UiLink>
+    </div>
+  </header>
+  <RegularMenu />
+</section>

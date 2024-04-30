@@ -1,0 +1,32 @@
+---
+import Link from "../ui-link.astro";
+
+interface Props {
+  img: string;
+  title: string;
+  rating: number;
+  price: string;
+}
+
+const { img: imageSource, title, rating, price } = Astro.props;
+---
+
+<li
+  class="bg-bgColor flex-shrink-0 w-full h-fit max-w-56 sm:max-w-none sm:m-auto flex flex-col rounded-xl p-5"
+>
+  <img
+    class="aspect-square shadow-3xl border-8 border-primary object-cover rounded-full w-5/6 h-auto self-center mb-4"
+    src={imageSource}
+  />
+  <h3 class="text-md font-bold mb-1">{title}</h3>
+  <div class="flex items-center gap-2">
+    <img src="images/rating-stars.jpg" class="w-2/4 h-min" />
+    <span class="text-secondary text-xs">({rating})</span>
+  </div>
+  <div class="flex justify-between flex-wrap items-center gap-5 mt-6">
+    <span class="text-md font-bold">{price}</span>
+    <Link textColor="white" size="sm" bgColor="primary" bordered filled
+      >Buy Now</Link
+    >
+  </div>
+</li>

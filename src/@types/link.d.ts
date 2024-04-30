@@ -3,6 +3,8 @@ import { HTMLAttributes } from "astro/types";
 
 export type LinkColor = "default" | "primary";
 
+export type LinkSize = "sm" | "md" | "bg";
+
 export interface LinkProps {
   href?: string;
   current?: boolean;
@@ -11,6 +13,7 @@ export interface LinkProps {
   bordered?: boolean;
   filled?: boolean;
   twStyles?: string;
+  size?: LinkSize;
 }
 
 
