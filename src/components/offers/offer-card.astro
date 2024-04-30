@@ -1,0 +1,19 @@
+---
+type RightLabelType = "discount" | "price";
+type LeftLableType = RightLabelType & "title";
+
+interface ILabel<T = RightLabelType | LeftLableType> {
+  type: T;
+  data: string;
+}
+
+interface Props {
+  topLeftLabel: ILabel<LeftLableType>;
+  topRightLabel: ILabel<RightLabelType>;
+  bgImage: string;
+}
+
+const { topLeftLabel, topRightLabel } = Astro.props;
+---
+
+<div></div>
