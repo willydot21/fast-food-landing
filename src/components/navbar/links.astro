@@ -1,0 +1,45 @@
+---
+import Link from "./link.astro";
+import LinkContainer from "./links-wrapper.astro";
+import type { LinkElement } from "../../@types";
+
+const navigationLinks: LinkElement[] = [
+  { label: "Home", href: "/", current: true },
+  { label: "About", href: "/about" },
+  { label: "Prices", href: "/prices" },
+  { label: "Contact", href: "/contact" },
+];
+
+const registrationLinks: LinkElement[] = [
+  { label: "Sign In", href: "/signin", textColor: "primary" },
+  {
+    label: "Sign Up",
+    href: "/signup",
+    textColor: "primary",
+    bordered: true,
+  },
+];
+
+const containers = [
+  {
+    links: navigationLinks,
+    class: "gap-8 md:gap-6",
+  },
+  {
+    links: registrationLinks,
+    class: "gap-6 md:gap-3 md:justify-end flex-row",
+  },
+];
+---
+
+{
+  containers.map(({ links, class: containerClass }) => (
+    <LinkContainer class={containerClass}>
+      {links.map(({ label, ...linkProps }) => (
+        <li>
+          <Link {...linkProps}>{label}</Link>
+        </li>
+      ))}
+    </LinkContainer>
+  ))
+}

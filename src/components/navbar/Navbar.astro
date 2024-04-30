@@ -1,0 +1,34 @@
+---
+import AppLogo from "./appLogo.astro";
+import MenuIcon from "./menu-icon.astro";
+import Links from "./links.astro";
+
+const _content = `
+  flex items-center justify-evenly flex-col 
+  w-full h-screen 
+  absolute -left-full top-0
+  transition-all duration-200 ease-in-out
+  md:flex-row md:justify-evenly md:w-2/3
+  md:static
+  md:width-auto md:h-auto 
+  md:transition-none
+  max-md:enabled:left-0
+  max-md:enabled:bg-[#262a2b]
+  `;
+---
+
+<nav
+  id="nav"
+  class="flex w-full backdrop-blur-md justify-between fixed left-0 top-0 mx-auto p-6 z-50 [&.scroll]:bg-white/50 [&.scroll]:border-b [&.scroll]:py-4 [&.scroll]:shadow-3xl transition-all ease-in-out duration-300"
+>
+  <aside class="w-1/3">
+    <AppLogo />
+  </aside>
+  <div id="nav-content" class={_content}>
+    <Links />
+  </div>
+  <button id="nav-activator" class="block md:hidden">
+    <MenuIcon />
+  </button>
+  <script src="./index.ts"></script>
+</nav>

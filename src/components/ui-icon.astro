@@ -1,0 +1,43 @@
+---
+interface Props {
+  src: string;
+  size?: "sm" | "md" | "bg" | "xl";
+  rounded?: boolean;
+  fill?: boolean;
+}
+
+const {
+  src: iconSource,
+  size = "sm",
+  rounded = true,
+  fill = false,
+} = Astro.props;
+
+const sourceLength = iconSource.length;
+const isSvg = iconSource.slice(sourceLength - 3, sourceLength) === "svg";
+---
+
+<span
+  class:list={[
+    "flex justify-center h-max",
+    {
+      "rounded-full": rounded,
+      "bg-secondary": fill,
+      "w-8": size == "sm",
+      "w-12": size == "md",
+      "w-20": size == "bg",
+      "w-32": size == "xl",
+      "p-2": isSvg,
+    },
+  ]}
+>
+  <img
+    src={iconSource}
+    class:list={[
+      "aspect-square w-full h-auto",
+      {
+        "rounded-full": rounded && !fill,
+      },
+    ]}
+  />
+</span>

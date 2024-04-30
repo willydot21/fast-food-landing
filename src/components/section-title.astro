@@ -1,0 +1,24 @@
+---
+interface Props {
+  text: string;
+  primaryWord?: string | string[];
+}
+
+const { text, primaryWord } = Astro.props;
+
+const isPrimary = (word: string) => word === primaryWord;
+---
+
+<h2 class="text-4xl font-black">
+  {
+    text
+      .split(" ")
+      .map((word) =>
+        isPrimary(word) ? (
+          <span class="text-primary">{`${word} `}</span>
+        ) : (
+          `${word} `
+        )
+      )
+  }
+</h2>

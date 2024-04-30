@@ -1,0 +1,53 @@
+---
+import type { LinkProps } from "../../@types";
+
+type Props = LinkProps;
+
+const {
+  href: slug = "#",
+  bgColor = "default",
+  textColor = "default",
+  current = false,
+  bordered = false,
+  filled = false,
+  twStyles = "",
+  ...rest
+} = Astro.props;
+
+const link = {
+  textColor: {
+    white: "text-white hover:text-secondary",
+    primary: "text-primary hover:text-primary-hover active:text-primary-active",
+    default: {
+      "text-secondary hover:text-primary": !current,
+      "text-white md:text-black": current,
+    },
+  }[textColor],
+
+  border: bordered && [
+    "border rounded-full py-1 px-2",
+    {
+      "border-primary hover:border-primary-active transition-all duration-50":
+        textColor === "primary",
+      "border-secondary": textColor === "default",
+    },
+  ],
+
+  bgColor: bgColor && {
+    "bg-primary hover:bg-primary-hover active:bg-primary-active":
+      bgColor === "primary",
+  },
+};
+
+const variant = [
+  "text-md font-medium",
+  link.textColor,
+  link.border,
+  link.bgColor,
+  twStyles,
+];
+---
+
+<a href={slug} class:list={variant} {...rest}>
+  <slot />
+</a>

@@ -1,0 +1,25 @@
+---
+const _bar = `
+  bar
+  z-10
+  block
+  w-6 h-1
+  my-1
+  bg-black
+  transition-all duration-200 ease-in-out
+  enabled:bg-white
+`;
+
+/**
+ * ASTRO ISSUE:
+ *   - You can't use a variable within a class if there is any class:list.
+ *   It results on a "class="name_of_the_variable" instead of "class="value_of_the_variable".
+ *
+ * ASTRO ISSUE 2:
+ *  - You just can't use applyWhenActive() auxiliar function.
+ */
+---
+
+<span class:list={[_bar, "enabled:translate-y-2 enabled:rotate-45"]}></span>
+<span class:list={[_bar, "enabled:opacity-0"]}></span>
+<span class:list={[_bar, "enabled:-translate-y-2 enabled:-rotate-45"]}></span>

@@ -1,0 +1,22 @@
+---
+import Category from "./category.astro";
+
+const categories = [
+  {
+    src: "images/burger.jpg",
+    name: "Chicken Burger",
+  },
+  {
+    src: "images/pizza.jpg",
+    name: "Chicken Pizza",
+  },
+  {
+    src: "images/chips.jpg",
+    name: "French Fries",
+  },
+];
+---
+
+<ul class="grid grid-cols-auto-fit-100 w-full content-center gap-4">
+  {categories.map((props) => <Category {...props} />)}
+</ul>

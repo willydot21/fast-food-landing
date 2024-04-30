@@ -1,0 +1,14 @@
+---
+import type { LinkProps } from "../@types";
+import Link from "./navbar/link.astro";
+
+interface Props extends LinkProps {}
+const iconVariant =
+  Astro.slots.has("icon") &&
+  "flex flex-row justify-center items-center w-full text-center";
+---
+
+<Link {...Astro.props} twStyles={iconVariant || ""}>
+  <slot />
+  <slot name="icon" />
+</Link>

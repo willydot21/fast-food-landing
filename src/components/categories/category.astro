@@ -1,0 +1,22 @@
+---
+import Icon from "../ui-icon.astro";
+import UiLink from "../ui-link.astro";
+
+interface Props {
+  src: string;
+  name: string;
+}
+
+const { src: source, name } = Astro.props;
+---
+
+<li class="flex flex-col w-full justify-center items-center max-w-90">
+  <span class="flex justify-center">
+    <img class="aspect-square w-2/3 h-auto" src={source} />
+  </span>
+  <h2 class="text-lg font-bold text-center">{name}</h2>
+  <UiLink textColor="primary">
+    <p class="font-medium pb-[0.21rem]">Order Now</p>
+    <Icon slot="icon" src="icons/next-arrow.svg" size="sm" />
+  </UiLink>
+</li>

@@ -1,0 +1,50 @@
+---
+import Icon from "./ui-icon.astro";
+
+const _imageContainer = `
+  hidden
+  md:block md:w-1/2
+  max-w-md
+`;
+---
+
+<section class="w-full relative flex flex-row justify-between flex-wrap my-28">
+  <aside class="w-full md:w-1/2 flex flex-col gap-6">
+    <h2 class="text-5xl font-black text-primary leading-normal">
+      All Fast Food is Available at
+      <span
+        class="relative inline-block w-fit z-10 after:absolute after:h-2 after:w-full after:bg-secondary after:bottom-4 after:rounded-full after:-z-10 after:right-0"
+      >
+        Foodle
+      </span>
+    </h2>
+    <span class="flex flex-row gap-5 items-center">
+      <Icon src="/images/zyzz-icon.jpg" size="sm" />
+      <h5 class="text-secondary font-medium md:w-1/2">
+        We Are Just A Click Away When You Crave For Delicious Fast Food
+      </h5>
+    </span>
+    <span class="flex flex-row flex-wrap gap-2 text-sm font-bold">
+      <a
+        href="/"
+        class="flex items-center p-1 rounded-full gap-3 pr-4 text-white bg-primary hover:bg-primary-hover active:bg-primary-active"
+      >
+        <Icon src="/icons/shopping-bag.svg" fill size="sm" rounded />
+        Buy Now
+      </a>
+      <a
+        href="/"
+        class="flex items-center gap-3 border border-solid border-gray-200 rounded-full p-1 pr-3"
+      >
+        <img
+          src="icons/play.svg"
+          class="border-2 w-8 h-auto rounded-full border-dotted border-gray-300"
+        />
+        How To Order
+      </a>
+    </span>
+  </aside>
+  <aside class={_imageContainer}>
+    <img src="/images/sandwich.jpg" />
+  </aside>
+</section>

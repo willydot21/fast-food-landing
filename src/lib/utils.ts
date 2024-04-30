@@ -1,0 +1,1 @@
+export const twTextColor = (color: string) => `text-${color}`;
