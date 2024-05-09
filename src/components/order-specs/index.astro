@@ -1,0 +1,30 @@
+---
+import SpecsItem from "./specs-item.astro";
+
+const specs = [
+  {
+    iconSrc: "icons/fast-delivery.svg",
+    title: "Fast Delivery",
+    description:
+      "The Food Will Be Delivered To Your Home Within 1-2 Hours Of Your Ordering.",
+  },
+  {
+    iconSrc: "icons/fresh.svg",
+    title: "Fresh Food",
+    description:
+      "Your Food Will Be Delivered 100% Fresh To Your Home. We Do Not Deliver Stale Food.",
+  },
+  {
+    iconSrc: "icons/free-delivery.svg",
+    title: "Free Delivery",
+    description:
+      " Your Food Delivery Is Absoluty Free. No Cost Just Order And Enjoy.",
+  },
+];
+---
+
+<ul
+  class="absolute bg-white -top-20 mx-auto left-0 right-0 w-[92%] flex min-[1132px]:justify-evenly overflow-x-scroll gap-6 shadow-3xl p-6 rounded-2xl"
+>
+  {specs.map((item) => <SpecsItem {...item} />)}
+</ul>

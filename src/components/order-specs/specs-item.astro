@@ -1,0 +1,21 @@
+---
+import Icon from "../ui-icon.astro";
+
+interface Props {
+  iconSrc: string;
+  title: string;
+  description: string;
+}
+
+const { iconSrc, title, description } = Astro.props;
+---
+
+<li class="flex items-center flex-shrink-0 max-w-80 w-full gap-2">
+  <Icon src={iconSrc} size="bg" fill />
+  <aside class="flex flex-col">
+    <h4 class="text-lg font-bold">{title}</h4>
+    <p class="text-sm text-secondary">
+      {description}
+    </p>
+  </aside>
+</li>
