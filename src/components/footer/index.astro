@@ -1,57 +1,22 @@
 ---
 import FooterContainer from "./footer-container.astro";
-import Link from "../ui-link.astro";
-import Icon from "../ui-icon.astro";
-import {
-  menuSections,
-  platforms,
-  references,
-  contactMethods,
-} from "./footer-data";
+import ReferenceList from "./reference-list/index.astro";
+import { footerRefs, platforms } from "./footer-data";
 ---
 
 <footer class="grid w-full grid-cols-auto-fit-100 gap-12 mx-auto p-6">
-  <FooterContainer title="Information">
-    <ul class="flex flex-col gap-4">
-      {
-        references.map((refName) => (
-          <li>
-            <Link>{refName}</Link>
-          </li>
-        ))
-      }
-    </ul>
-  </FooterContainer>
-  <FooterContainer title="Menu">
-    <ul class="flex flex-col gap-4">
-      {
-        menuSections.map((sectionName) => (
-          <li>
-            <Link>{sectionName}</Link>
-          </li>
-        ))
-      }
-    </ul>
-  </FooterContainer>
-  <FooterContainer title="Contact">
-    <ul class="flex flex-col gap-4">
-      {contactMethods.map((method) => <li>{method}</li>)}
-    </ul>
-  </FooterContainer>
+  {
+    footerRefs.map(({ title, ...rest }) => (
+      <FooterContainer {title}>
+        <ReferenceList {...rest} />
+      </FooterContainer>
+    ))
+  }
+
   <FooterContainer title="Fooodish">
     Continue Foodish 2023 all rights reserved
   </FooterContainer>
   <FooterContainer title="Follow Us On">
-    <ul class="flex flex-row gap-2">
-      {
-        platforms.map((name) => (
-          <li>
-            <Link>
-              <Icon src={`icons/${name}.svg`} />
-            </Link>
-          </li>
-        ))
-      }
-    </ul>
+    <ReferenceList twStyles="flex flex-row gap-2" elements={platforms} />
   </FooterContainer>
 </footer>

@@ -1,10 +1,18 @@
 const plugin = require('tailwindcss/plugin');
 
 const primary = {
-		hover: 'var(--primary-hover)',
-		active: 'var(--primary-active)',
-		focus: 'var(--primary-focus)',
-		DEFAULT: 'var(--primary)'
+	hover: 'var(--primary-hover)',
+	active: 'var(--primary-active)',
+	focus: 'var(--primary-focus)',
+	DEFAULT: 'var(--primary)'
+}
+
+
+const secondaryText = {
+	hover: 'var(--secondary-text-hover)',
+	active: 'var(--secondary-text-active)',
+	focus: 'var(--secondary-text-focus)',
+	DEFAULT: 'var(--secondary-text)'
 }
 
 /** @type {import('tailwindcss').Config} */
@@ -34,12 +42,13 @@ export default {
 			textColor: {
 				DEFAULT: 'var(--default-text)',
 				primary,
-				secondary: 'var(--secondary-text)'	
+				secondary: secondaryText	
 			},
 			colors: {
 				bgColor: 'var(--bg)',
+				secondary: 'var(--secondary)',
+				tertiary: secondaryText,
 				primary,
-				secondary: 'var(--secondary)'
 			},
 		},
 	},

@@ -1,0 +1,26 @@
+---
+import Icon from "../../ui-icon.astro";
+import Link from "../../ui-link.astro";
+import type { IRefItem } from "../../../@types";
+
+type Props = IRefItem;
+
+const { link = false, icon, href = "#" } = Astro.props;
+const iconSource = `icons/${icon}.svg`;
+---
+
+<li>
+  {
+    link ? (
+      <Link {...{ href }}>
+        <slot />
+        {icon && <Icon src={iconSource} />}
+      </Link>
+    ) : (
+      <>
+        <slot />
+        {icon && <Icon src={iconSource} />}
+      </>
+    )
+  }
+</li>

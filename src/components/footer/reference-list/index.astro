@@ -1,0 +1,15 @@
+---
+import type { IRefItem as LinkItem } from "../../../@types";
+import ItemWrapper from "./item-wrapper.astro";
+
+interface Props {
+  elements: Array<string | LinkItem>;
+  twStyles?: string;
+}
+
+const { elements, twStyles: classes } = Astro.props;
+---
+
+<ul class={classes}>
+  {elements.map((el) => <ItemWrapper element={el} />)}
+</ul>

@@ -1,0 +1,20 @@
+---
+import type { IRefItem as LinkItem } from "../../../@types";
+import RefItem from "./ref-item.astro";
+
+interface Props {
+  element: LinkItem | string;
+}
+
+let { element } = Astro.props;
+
+if (typeof element === "string") {
+  element = { text: element };
+} else if (typeof element.text === "undefined") {
+  element.text = "";
+}
+---
+
+<RefItem {...element}>
+  {element.text}
+</RefItem>
