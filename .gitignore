@@ -1,6 +1,7 @@
 # build output
 dist/
 ./fast-food-landing.code-workspace
+.vscode/settings.json
 
 # generated types
 .astro/
