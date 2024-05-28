@@ -14,8 +14,22 @@ import OfferCard from "./offer-card.astro";
   </div>
   <aside class="flex flex-col gap-2 w-1/2 h-full">
     <div
-      class="p-4 w-full h-1/2 rounded-xl bg-[#996116] bg-[url('images/offer2-bg.jpg')] bg-right bg-contain bg-no-repeat"
+      class="flex justify-between relative p-4 w-full h-1/2 rounded-xl bg-blobColor"
     >
+      <img
+        class="absolute bottom-0 right-0 left-0 w-2/3 mx-auto"
+        src="images/offer2-bg.jpg"
+      />
+      <span
+        class="h-fit mt-3.5 flex -rotate-45 flex-col justify-center relative"
+      >
+        <h3 class="z-10 text-lg font-bold text-white">$3.80</h3>
+        <img class="absolute scale-125 -z-0 m-auto" src="icons/blob4.svg" />
+      </span>
+      <span class="h-fit flex flex-col justify-center relative">
+        <h3 class="z-10 text-xl font-bold text-white">15% <br />Off</h3>
+        <img class="absolute scale-125 -z-0 m-auto" src="icons/blob2.svg" />
+      </span>
     </div>
     <div
       class="flex justify-between p-4 w-full h-1/2 relative rounded-xl bg-secondary overflow-hidden"

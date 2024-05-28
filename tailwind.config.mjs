@@ -47,6 +47,7 @@ export default {
 			colors: {
 				bgColor: 'var(--bg)',
 				secondary: 'var(--secondary)',
+				blobColor: '#996116',
 				tertiary: secondaryText,
 				primary,
 			},
