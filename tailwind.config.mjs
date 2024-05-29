@@ -20,6 +20,7 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		screens: {
+			card_bp: '696px',
 			sm: '480px',
 			md: '768px',
 			lg: '976px',
@@ -27,6 +28,9 @@ export default {
 			xxl: '1920px'
 		},
 		extend: {
+			scale: {
+				175: '1.75'
+			},
 			screens:{ 
 				mobile: '620px'
 			},
@@ -37,6 +41,7 @@ export default {
         'auto-fill-100': 'repeat(auto-fill, minmax(180px, 1fr))',
 				'auto-fit-sm': 'repeat(auto-fill, minmax(150px, 3fr))',
         'auto-fit-100': 'repeat(auto-fit, minmax(140px, 1fr))',
+				'auto-fit-mb': 'repeat(auto-fit, minmax(265px, 1fr))',
 				
       },
 			textColor: {
@@ -47,7 +52,12 @@ export default {
 			colors: {
 				bgColor: 'var(--bg)',
 				secondary: 'var(--secondary)',
-				blobColor: '#996116',
+				blob: {
+					green: {
+						DEFAULT: '#996116',
+						dark: '#71470f'
+					}
+				},
 				tertiary: secondaryText,
 				primary,
 			},

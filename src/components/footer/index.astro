@@ -2,21 +2,24 @@
 import FooterContainer from "./footer-container.astro";
 import ReferenceList from "./reference-list/index.astro";
 import { footerRefs, platforms } from "./footer-data";
+import LayoutWrapper from "../layout-wrapper.astro";
 ---
 
-<footer class="grid w-full grid-cols-auto-fit-100 gap-12 mx-auto p-6">
-  {
-    footerRefs.map(({ title, ...rest }) => (
-      <FooterContainer {title}>
-        <ReferenceList {...rest} />
-      </FooterContainer>
-    ))
-  }
+<LayoutWrapper>
+  <footer class="grid w-full grid-cols-auto-fit-100 gap-12 mx-auto p-6">
+    {
+      footerRefs.map(({ title, ...rest }) => (
+        <FooterContainer {title}>
+          <ReferenceList {...rest} />
+        </FooterContainer>
+      ))
+    }
 
-  <FooterContainer title="Fooodish">
-    Continue Foodish 2023 all rights reserved
-  </FooterContainer>
-  <FooterContainer title="Follow Us On">
-    <ReferenceList twStyles="flex flex-row gap-2" elements={platforms} />
-  </FooterContainer>
-</footer>
+    <FooterContainer title="Fooodish">
+      Continue Foodish 2023 all rights reserved
+    </FooterContainer>
+    <FooterContainer title="Follow Us On">
+      <ReferenceList twStyles="flex flex-row gap-2" elements={platforms} />
+    </FooterContainer>
+  </footer>
+</LayoutWrapper>

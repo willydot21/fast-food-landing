@@ -4,7 +4,7 @@ import Hero from "../components/hero/index.astro";
 import OrderSpecs from "../components/order-specs/index.astro";
 import MenuSection from "../components/menu/index.astro";
 import CategorySection from "../components/categories/index.astro";
-import OffersSection from "../components/offers/index.astro";
+import LayoutWrapper from "../components/layout-wrapper.astro";
 ---
 
 <Layout title="Mi Página web">
@@ -13,8 +13,10 @@ import OffersSection from "../components/offers/index.astro";
     class="bg-white relative flex w-full justify-center flex-col"
     slot="content"
   >
-    <OrderSpecs />
-    <CategorySection />
-    <MenuSection />
+    <LayoutWrapper>
+      <OrderSpecs />
+      <CategorySection />
+      <MenuSection />
+    </LayoutWrapper>
   </main>
 </Layout>
