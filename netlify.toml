@@ -1,0 +1,4 @@
+[build]
+base = "dist"
+command = "build"
+publish = "dist/fast-food-landing"
