@@ -28,6 +28,9 @@ export default {
 			xxl: '1920px'
 		},
 		extend: {
+			backgroundImage: {
+				burgerOffer: 'url("images/burger-offer.jpg")'
+			},
 			scale: {
 				175: '1.75'
 			},
