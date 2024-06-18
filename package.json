@@ -2,6 +2,7 @@
   "name": "fast-food-landing",
   "type": "module",
   "version": "0.0.1",
+  "main": "dist",
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
