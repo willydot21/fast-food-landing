@@ -29,12 +29,13 @@ export default {
 		},
 		extend: {
 			backgroundImage: {
-				burgerOffer: 'url("images/burger-offer.jpg")'
+				burgerOffer: 'url("../images/burger-offer.jpg")'
 			},
 			scale: {
 				175: '1.75'
 			},
 			screens:{ 
+				
 				mobile: '620px'
 			},
 			boxShadow: {
